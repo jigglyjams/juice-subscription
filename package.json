@@ -1,0 +1,27 @@
+{
+  "name": "@jbx-protocol/juice-nft-rewards",
+  "bugs": {
+    "url": "https://github.com/jbx-protocol/juice-nft-rewards/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbx-protocol/juice-nft-rewards"
+  },
+  "version": "6.0.0",
+  "license": "MIT",
+  "dependencies": {
+    "@jbx-protocol/juice-contracts-v3": "^2.0.0",
+    "@openzeppelin/contracts": "^4.6.0"
+  },
+  "devDependencies": {
+    "prettier": "^2.4.0",
+    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "solhint": "^3.3.6",
+    "solhint-plugin-prettier": "^0.0.5"
+  },
+  "scripts": {
+    "pretty": "prettier --write \"./**/*.{js,jsx,json,sol}\"",
+    "deploy-goerli": "source .env && forge script DeployGoerli --rpc-url $GOERLI_RPC_PROVIDER_URL --broadcast --mnemonic-paths mnemonic.txt --verify --etherscan-api-key $ETHERSCAN_API_KEY --sender $SENDER_ADDRESS --optimize --optimizer-runs 200 --via-ir -vvv",
+    "deploy-mainnet": "source .env && forge script DeployMainnet --rpc-url $MAINNET_RPC_PROVIDER_URL --broadcast --mnemonic-paths mnemonic.txt --verify --etherscan-api-key $ETHERSCAN_API_KEY --sender $SENDER_ADDRESS --optimize --optimizer-runs 200 --via-ir -vvv"
+  }
+}
